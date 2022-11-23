@@ -7,6 +7,40 @@
 #include <fstream>
 
 
+// Params
+
+
+// General params
+
+// You can set it to a constant if you want the same maze every time, or you can change it relativly to timm to have it change everytime you run the program
+const int RANDOM_SEED = 13042011;
+
+// How frequenctly the color changes
+const int COLOR_COEF = 4;
+
+// The width of the images
+const int WIDTH = 16;
+
+// The height of the images
+const int HEIGHT = 9;
+
+
+
+// Rendering params
+
+// How many frames to wait before rendering the maze when generating
+const int generateLogRate = 10;
+
+// How many frames to wait before rendering the maze when solving
+const int solveLogRate = 10;
+
+// How many frames to wait before rendering the maze when hiding
+const int hideLogRate = 10;
+
+
+// End params
+
+
 using namespace std;
 using namespace EasyBMP;
 
@@ -14,7 +48,6 @@ const int GOOD_PATH = -3;
 const int TAIL = -2;
 const int WALL = -1;
 const int EMPTY = 0;
-const int COLOR_COEF = 4;
 
 RGBColor allColor (const int &v) {
     return RGBColor(v, v, v);
@@ -316,14 +349,10 @@ void Maze::hideAll (const int &logRate) {
 int main () {
     ofstream o;
     o.open("data.json");
-
-    const int generateLogRate = 10;
-    const int solveLogRate = 10;
-    const int hideLogRate = 10;
     
     
-    srand(13042011 + 7);
-    Maze maze(64, 36, 1);
+    srand(RANDOM_SEED);
+    Maze maze(WIDTH, HEIGHT, 1);
 
     maze.init();
     maze.generate(generateLogRate, o);// 10 -> 205; 25 -> 486; 50 -> 1185; 100 -> 2332
