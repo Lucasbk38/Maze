@@ -13,3 +13,20 @@ PS: For it to create the video, you need to have ffmpeg installed.
 ## Customization
 
 You can access file `main.cpp` file and change its params on the top.
+
+## Example
+
+This is a video generated with the following settings :
+
+```c++
+const int RANDOM_SEED = 13042011;
+const int COLOR_COEF = 4;
+const int WIDTH = 160;
+const int HEIGHT = 90;
+
+const int generateLogRate = 10;
+const int solveLogRate = 10;
+const int hideLogRate = 10;
+```
+
+![video](video.mp4)
