@@ -16,7 +16,7 @@ You can access file `main.cpp` file and change its params on the top.
 
 ## Example
 
-This is a video generated with the following settings :
+This is a [video](video.mp4) generated with the following settings :
 
 ```c++
 const int RANDOM_SEED = 13042011;
@@ -28,5 +28,3 @@ const int generateLogRate = 10;
 const int solveLogRate = 10;
 const int hideLogRate = 10;
 ```
-
-![video](video.mp4)
